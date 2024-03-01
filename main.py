@@ -27,7 +27,7 @@ def iniciar_comparacao():
         if resultado is None:
             print("Não foi possível encontrar faces em uma das imagens.")
         else:
-            print('As faces são iguais?')
+            print('As faces pertencem à mesma pessoa?')
             if resultado:
                 print("Sim")
             else:
