@@ -27,11 +27,14 @@ def iniciar_comparacao():
         if resultado is None:
             print("Não foi possível encontrar faces em uma das imagens.")
         else:
-            print('As faces são iguais? ', resultado)
+            print('As faces são iguais?')
+            if resultado:
+                print("Sim")
+            else:
+                print("Não")
     else:
         print("Seleção de arquivo cancelada.")
 
 raiz = tk.Tk()
 raiz.withdraw()
 iniciar_comparacao()
-
