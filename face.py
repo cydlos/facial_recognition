@@ -13,25 +13,32 @@ def comparar_faces(imagem_referencia_path, imagem_desconhecida_path):
     codificacoes_desconhecida = face_recognition.face_encodings(imagem_desconhecida)
 
     if codificacoes_referencia and codificacoes_desconhecida:
-        resultado = face_recognition.compare_faces([codificacoes_referencia[0]], codificacoes_desconhecida[0])
-        return resultado[0]
+        # Comparando as faces
+        resultados = face_recognition.compare_faces([codificacoes_referencia[0]], codificacoes_desconhecida[0])
+        # Calculando a distância
+        distancia = face_recognition.face_distance([codificacoes_referencia[0]], codificacoes_desconhecida[0])
+
+        # Convertendo a distância em uma porcentagem de probabilidade
+        # Aqui você pode ajustar a escala conforme necessário. Uma escala comum é inverter a distância e multiplicar por algum fator.
+        probabilidade = max(0, 100 - (distancia[0] * 100))
+        return resultados[0], probabilidade
     else:
-        return None
+        return None, None
 
 def iniciar_comparacao():
     imagem_referencia_path = selecionar_arquivo("Selecione a imagem de referência")
     imagem_desconhecida_path = selecionar_arquivo("Selecione a imagem desconhecida")
 
     if imagem_referencia_path and imagem_desconhecida_path:
-        resultado = comparar_faces(imagem_referencia_path, imagem_desconhecida_path)
+        resultado, probabilidade = comparar_faces(imagem_referencia_path, imagem_desconhecida_path)
         if resultado is None:
             print("Não foi possível encontrar faces em uma das imagens.")
         else:
             print('As faces pertencem à mesma pessoa?')
             if resultado:
-                print("Sim")
+                print(f"Sim, com {probabilidade:.2f}% de probabilidade.")
             else:
-                print("Não")
+                print(f"Não, com {probabilidade:.2f}% de probabilidade.")
     else:
         print("Seleção de arquivo cancelada.")
 
