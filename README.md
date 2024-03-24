@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Face Match App is a Python application that utilizes the `face_recognition` library to compare faces between two images. It detects all faces present in each image, extracts their features, and then compares these features to find matches. The app can identify if a person in the first image appears in the second image, making it useful for various applications such as verifying identities or finding similar faces in different photos.
+This Face Recognition App is a Python application that utilizes the `face_recognition` library to compare faces between two images. It detects all faces present in each image, extracts their features, and then compares these features to find matches. The app can identify if a person in the first image appears in the second image, making it useful for various applications such as verifying identities or finding similar faces in different photos.
 
 ## Requirements
 
