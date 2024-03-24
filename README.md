@@ -1,4 +1,4 @@
-# Face Match App
+# FACIAL RECOGNITION APP
 
 ## Overview
 
