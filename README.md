@@ -13,6 +13,10 @@ This Face Recognition App is a Python application that utilizes the `face_recogn
 
 First, you need to install the `face_recognition` library. This can be done by running the following command in your terminal:
 
+```python
+pip install face_recognition
+```
+
 ## Usage
 
 1. Place the images you want to compare in a known directory.
