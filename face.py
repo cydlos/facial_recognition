@@ -8,24 +8,24 @@ class FaceComparer(QWidget):
         self.initUI()
 
     def initUI(self):
-        # Configuração da janela
+        # configuração da janela
         self.setWindowTitle('Comparador de Faces com PyQt')
         self.setGeometry(100, 100, 200, 100)
 
-        # Layout Vertical
+        # layout Vertical
         layout = QVBoxLayout()
 
-        # Botão para selecionar a imagem de referência
+        # botão p/ selecionar a imagem de referência
         self.btn_select_ref = QPushButton('Selecionar Imagem de Referência', self)
         self.btn_select_ref.clicked.connect(self.selecionarImagemReferencia)
         layout.addWidget(self.btn_select_ref)
 
-        # Botão para selecionar a imagem desconhecida
+        # botão p/ selecionar a imagem desconhecida
         self.btn_select_unknown = QPushButton('Selecionar Imagem Desconhecida', self)
         self.btn_select_unknown.clicked.connect(self.selecionarImagemDesconhecida)
         layout.addWidget(self.btn_select_unknown)
 
-        # Label para mostrar o resultado
+        # label p/ mostrar o resultado
         self.result_label = QLabel('Resultado aparecerá aqui', self)
         layout.addWidget(self.result_label)
 
